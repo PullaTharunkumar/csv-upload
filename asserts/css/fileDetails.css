@@ -27,3 +27,9 @@ td,th{
     height: 35px;
     padding: 0px 30px;
 }
+#reset{
+    text-decoration: none;
+    background-color:rgb(117, 145, 102);
+    padding: 10px 20px;
+    border-radius: 25px;
+}
