@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/css/fileDetails.css">
+<h1 id="fileName">
+    File : <%= fileName %>
+</h1>
+<div id="search-div">
+    <label for="a-z" >sort A-Z</label>
+    <input type="radio" name="sort" id="a-z">
+    <label for="z-a">sort Z-A</label>
+    <input type="radio" id="z-a" name="sort">
+    <form class="inline">
+        <input type="text" id="search" placeholder="Search...">
+        <button id="search-btn"> Search </button>
+    </form>
+</div>
+<div id="files-div">
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <% for(let heading of headers ){ %>
+                    <th>
+                        <%= heading %>
+                    </th>
+                <% } %>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i in fileData) {%>
+                <% if(i>= 100){ %>
+                    <% break %>
+                <% }%>
+                <tr>
+                    <td class="sno">
+                        <%= parseInt(i)+1 %>
+                    </td>
+                    <% for(let heading of headers ){ %>
+                        <td>
+                            <%= fileData[i][heading] %>
+                        </td>
+                    <% } %>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
+
+<script src="/events/event.js"></script>

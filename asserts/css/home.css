@@ -1,0 +1,27 @@
+#home{
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+    margin: 10px 0px;
+    padding: 20px 0px;
+}
+#files-div{
+    display: flex;
+    justify-content: center;
+}
+tr{
+    background-color: rgb(183, 94, 193);
+    margin: 0px;
+    
+}
+td,th{
+    text-align: center;
+    padding: 10px;
+    border:0px;
+}
+a{
+    text-decoration: none;
+    color: blue;
+    font-weight: bolder;
+
+}

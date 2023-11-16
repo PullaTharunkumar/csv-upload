@@ -1,0 +1,29 @@
+#fileName{
+    background-color: aqua;
+    text-align: center;
+    padding: 5px;
+}
+#files-div{
+    display: flex;
+    justify-content: center;
+}
+tr{
+    background-color: #7fffd4;
+}
+td,th{
+    padding: 10px;
+    text-align: center;
+}
+#search-div{
+    text-align: center;
+}
+#search{
+    height: 35px;
+    width: 200px;
+    border-radius: 25px;
+}
+#search-btn{
+    border-radius: 25px;
+    height: 35px;
+    padding: 0px 30px;
+}

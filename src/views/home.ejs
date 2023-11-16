@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/css/home.css">
+<div id="home">
+    <form method="post" action="/" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv" required>
+        <button type="submit">Upload File</button>
+    </form>
+</div>
+<div id="files-div">
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>File Name</th>
+                <th>File Upload Timings</th>
+                <th>View</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i in files) {%>
+                    <tr>
+                        <td>
+                            <%= parseInt(i)+1 %>
+                        </td>
+                        <td>
+                            <%= files[i].fileName %>
+                        </td>
+                        <td>
+                            <%= new Date(files[i].timeStamp).toUTCString() %>
+                        </td>
+                        <td>
+                            <a href="/fileDetails/<%= files[i]._id%>">
+                                Details
+                            </a>
+                        </td>
+                    </tr>
+                <% } %>
+        </tbody>
+    </table>
+</div>
