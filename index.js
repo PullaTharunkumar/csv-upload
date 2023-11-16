@@ -27,6 +27,6 @@ server.post('/', upload.single('file'), (req, res) => controller.csvUpload(req, 
 server.get('/fileDetails/:id', (req, res) => controller.fileOpen(req, res))
 // Server Port
 server.listen(8080, () => {
-    console.log('Server running on port 8080')
+    console.log('Server running on port 8000')
     connectToMongoDB()
 })

@@ -20,13 +20,19 @@ export const csvFileUpload = async (fileInfo) => {
         // stream data
         const headers = []
         const fileData = []
+        let count = 0;
         const csvStream = fs.createReadStream(fileInfo.path).pipe(csvParser())
         csvStream.on('headers', (data) => {
             data.map((header) => {
                 headers.push(header);
             })
         })
-            .on('data', (data) => fileData.push(data))
+            .on('data', (data) => {
+                if(count < 100){
+                    fileData.push(data)
+                    count++
+                }
+            })
             .on('end', async () => resolve())
         await new Promise((resolve) => csvStream.on('end', resolve));
         const data = {
